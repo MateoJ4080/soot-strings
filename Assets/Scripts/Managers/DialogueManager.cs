@@ -13,12 +13,12 @@ public class DialogueManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public IEnumerator PlaySequence(DialogueData[] dialogues)
+    public IEnumerator PlaySequence(DialogueSequence dialogue)
     {
         _playerController.enabled = false;
-        foreach (DialogueData dialogue in dialogues)
+        foreach (var line in dialogue.Lines)
         {
-            yield return UIManager.Instance.ShowDialogue(dialogue);
+            yield return UIManager.Instance.ShowDialogue(line);
         }
         _playerController.enabled = true;
     }

@@ -6,7 +6,7 @@ public class InteractableShower : Interactable
 {
     [SerializeField] private InteractableBed interactableBed;
 
-    [SerializeField] private DialogueData[] _dialogues;
+    [SerializeField] private DialogueSequence _dialogues;
     [SerializeField] private AudioClip _showerSound;
 
     public override void Interact(GameObject gameObject)

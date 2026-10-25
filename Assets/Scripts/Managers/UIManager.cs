@@ -38,8 +38,10 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public IEnumerator ShowMessage(Sprite background, float duration, string message)
+    public IEnumerator ShowDialogue(DialogueLine dialogue)
     {
+        if (!_debugConfig.showDialogues) yield break;
+
         if (_dialoguePrefab == null)
         {
             Debug.LogError("UIManager: Prefab not assigned in the inspector.");
@@ -58,24 +60,10 @@ public class UIManager : MonoBehaviour
         }
 
         yield return StartCoroutine(Fade(canvasGroup, 0f, 1f, _fadeDuration));
-        yield return StartCoroutine(WriteTextUI(message, tmp, _letterSound));
-        yield return new WaitForSeconds(duration);
+        yield return StartCoroutine(WriteTextUI(dialogue.Text, tmp, _letterSound));
+        yield return new WaitForSeconds(1f);
         yield return StartCoroutine(Fade(canvasGroup, 1f, 0f, _fadeDuration));
         Destroy(instance);
-    }
-
-    public IEnumerator ShowPopup(string text)
-    {
-        if (!_debugConfig.showDialogues) yield break;
-
-        yield return ShowMessage(null, _popupDuration, text);
-    }
-
-    public IEnumerator ShowDialogue(DialogueData dialogue)
-    {
-        if (!_debugConfig.showDialogues) yield break;
-
-        yield return ShowMessage(dialogue.Background, dialogue.Duration, dialogue.Text);
     }
 
     public void ShowInteractableText()

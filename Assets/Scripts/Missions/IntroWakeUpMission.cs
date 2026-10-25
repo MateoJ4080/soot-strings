@@ -9,8 +9,8 @@ public class IntroWakeUpMission : MonoBehaviour
 
     [SerializeField] private Animator _introAnimator;
     [SerializeField] private AnimationClip _wakeUpClip;
-    [SerializeField] private DialogueContainer _dialogues;
-    [SerializeField] private InteractableShower shower;
+    [SerializeField] private DialogueSequence _dialogues;
+    [SerializeField] private InteractableShower _bathtub;
 
     public WaitForSeconds _waitForSeconds2 = new(2f);
 
@@ -20,15 +20,14 @@ public class IntroWakeUpMission : MonoBehaviour
         _camController.enabled = false;
 
         _introAnimator.Play("WakeUp");
-        yield return new WaitForSeconds(_wakeUpClip.length * 0.5f); // ----- '2' FOR DEBUG ONLY -----
+        yield return new WaitForSeconds(_wakeUpClip.length * 0.5f); // ----- '0.5' FOR DEBUG ONLY -----
 
-        // yield return UIManager.Instance.ShowDialogue("Ughhh… my head is killing me.");
-        // yield return UIManager.Instance.ShowDialogue("What the hell did I do last night?");
+        StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
 
         _camController.enabled = true;
         DayManager.Instance.SetPlayerActive(true);
 
         yield return _waitForSeconds2;
-        shower.Activate();
+        _bathtub.Activate();
     }
 }

@@ -8,7 +8,7 @@ public class LandlineMission : MonoBehaviour
     [SerializeField] private InteractableCellphone _interactableCellphone;
     [SerializeField] private Camera _cam;
     [SerializeField] private GameObject _faintTrigger;
-    [SerializeField] private DialogueData[] _dialogues;
+    [SerializeField] private DialogueSequence _dialogues;
     [SerializeField] private AudioClip _faintSfx;
     [SerializeField] private AudioSource landlineSource;
     float startDistance;
