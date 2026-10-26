@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class InteractableShower : Interactable
+public class InteractableBathtub : Interactable
 {
     [SerializeField] private InteractableBed interactableBed;
 

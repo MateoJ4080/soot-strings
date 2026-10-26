@@ -10,7 +10,7 @@ public class IntroWakeUpMission : MonoBehaviour
     [SerializeField] private Animator _introAnimator;
     [SerializeField] private AnimationClip _wakeUpClip;
     [SerializeField] private DialogueSequence _dialogues;
-    [SerializeField] private InteractableShower _bathtub;
+    [SerializeField] private InteractableBathtub _bathtub;
 
     public WaitForSeconds _waitForSeconds2 = new(2f);
 
