@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5681c6ece606c4f9a6b315e8ef51a9, type: 3}
   m_Name: WakeUpSequence
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
-  duration: 0
+  lines:
+  - Text: "Ughhh\u2026 my head is killing me."
+    Speaker: 0
+  - Text: What the hell did I do last night?
+    Speaker: 0
+  duration: 1

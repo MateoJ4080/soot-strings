@@ -6,9 +6,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    [Header("Settings")]
-    [SerializeField] private DebugConfig _debugConfig;
-
     [Header("General")]
     [SerializeField] private float _letterInterval = 0.1f;
     [SerializeField] private float _wordInterval = 0.1f;
@@ -40,7 +37,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator ShowDialogue(DialogueLine dialogue)
     {
-        if (!_debugConfig.showDialogues) yield break;
+        if (DebugManager.IsDebugMode) yield break;
 
         if (_dialoguePrefab == null)
         {
@@ -86,8 +83,6 @@ public class UIManager : MonoBehaviour
 
     public void HideObjectiveText()
     {
-        if (!_debugConfig.showObjective) return;
-
         _objectiveText.gameObject.SetActive(false);
     }
 

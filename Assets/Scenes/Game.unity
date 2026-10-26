@@ -551,7 +551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7d927f93f3f1d4a83649725fc58477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugConfig: {fileID: 11400000, guid: 9cdb76da8722f4b47bf82826f597d253, type: 2}
   _letterInterval: 0.05
   _wordInterval: 0.05
   _fadeDuration: 0.5
@@ -2992,7 +2991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactionRange: 2
   interactableBed: {fileID: 0}
-  _dialogues: []
+  _dialogues: {fileID: 0}
   _showerSound: {fileID: 0}
 --- !u!65 &605121119
 BoxCollider:
@@ -3163,6 +3162,51 @@ Transform:
   - {fileID: 2123689301}
   m_Father: {fileID: 878529378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &698257664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698257665}
+  - component: {fileID: 698257666}
+  m_Layer: 0
+  m_Name: DebugManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &698257665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698257664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 878529378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698257666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698257664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cde032a6893ba448850d03605019515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugManager
+  _isDebugMode: 0
 --- !u!1 &716580185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,6 +4466,7 @@ Transform:
   - {fileID: 647684100}
   - {fileID: 18233867}
   - {fileID: 458780263}
+  - {fileID: 698257665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &896013412
@@ -5726,9 +5771,7 @@ MonoBehaviour:
   _interactableCellphone: {fileID: 717695094}
   _cam: {fileID: 330585545}
   _faintTrigger: {fileID: 445664719}
-  _dialogues:
-  - {fileID: 11400000, guid: 50c6996ed1c5d994c97dec121f23a26f, type: 2}
-  - {fileID: 11400000, guid: 3b4b7f4750645c941addde6922d62110, type: 2}
+  _dialogues: {fileID: 0}
   _faintSfx: {fileID: 8300000, guid: 14cde32970d507748bf0cb162b352147, type: 3}
   landlineSource: {fileID: 719151708}
 --- !u!1001 &1259862962
@@ -7967,8 +8010,8 @@ MonoBehaviour:
   _head: {fileID: 330585546}
   _introAnimator: {fileID: 1017044457}
   _wakeUpClip: {fileID: 7400000, guid: f8e27e39c2aa00c4286de2b483c0dde4, type: 2}
-  _dialogues: {fileID: 0}
-  shower: {fileID: 605121117}
+  _dialogues: {fileID: 11400000, guid: ae89942a9466cf34683d113e7cd126eb, type: 2}
+  _bathtub: {fileID: 605121117}
 --- !u!1001 &1823135741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9443,7 +9486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38c9022ef80b544e91ef16a149667ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugConfig: {fileID: 11400000, guid: 9cdb76da8722f4b47bf82826f597d253, type: 2}
   playerController: {fileID: 1892384226}
   playerInteractor: {fileID: 1892384234}
   canvasGroup: {fileID: 896013413}

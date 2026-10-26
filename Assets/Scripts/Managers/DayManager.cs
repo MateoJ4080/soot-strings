@@ -7,9 +7,6 @@ public class DayManager : MonoBehaviour
 {
     public static DayManager Instance { get; private set; }
 
-    [Header("Settings")]
-    [SerializeField] DebugConfig debugConfig;
-
     [Header("References")]
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerInteractor playerInteractor;
@@ -35,9 +32,8 @@ public class DayManager : MonoBehaviour
 
     public void Start()
     {
-
-        // Debug: if in debugMode mode, enable all interactables for testing.
-        if (debugConfig.debugModeEnabled)
+        // Enable all interactables for testing
+        if (DebugManager.IsDebugMode)
         {
             var monos = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
             var interactables = monos.OfType<IInteractable>();
@@ -53,7 +49,6 @@ public class DayManager : MonoBehaviour
                 StartCoroutine(dayEvent.Execute());
             }
         }
-
     }
 
 
