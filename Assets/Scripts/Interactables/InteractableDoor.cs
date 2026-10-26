@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class InteractableDoor : MonoBehaviour, IInteractable
+public class InteractableDoor : Interactable
 {
     [SerializeField] private float _speed = 1f;
     [SerializeField] private Animator _animator;
@@ -9,13 +9,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     private bool _isOpen = false;
     private Coroutine _doorRoutine;
 
-    [SerializeField] private float interactionRange = 1f;
-    public float InteractionRange => interactionRange;
-
-    private bool isActive;
-    public bool IsActive { get => isActive; }
-
-    public void Interact(GameObject gameObject)
+    public override void Interact(GameObject gameObject)
     {
         _isOpen = !_isOpen;
 
@@ -25,16 +19,6 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         // Target value for the Blend Tree: 1 = fully open, 0 = fully closed
         float target = _isOpen ? 1f : 0f;
         _doorRoutine = StartCoroutine(AnimateDoor(target));
-    }
-
-    public void Activate()
-    {
-        isActive = true;
-    }
-
-    public void Deactivate()
-    {
-        isActive = false;
     }
 
     // Using coroutine to avoid doing it on the Update

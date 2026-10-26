@@ -5,10 +5,12 @@ public abstract class Interactable : MonoBehaviour, IInteractable
     [SerializeField] private float _interactionRange = 2f;
 
     public float InteractionRange => _interactionRange;
-    public bool IsActive { get; private set; }
+
+    [SerializeField] private bool _isActive;
+    public bool IsActive => _isActive;
 
     public abstract void Interact(GameObject gameObject);
 
-    public void Activate() => IsActive = true;
-    public void Deactivate() => IsActive = false;
+    public void Activate() => _isActive = true;
+    public void Deactivate() => _isActive = false;
 }
