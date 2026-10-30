@@ -4944,6 +4944,7 @@ GameObject:
   - component: {fileID: 1011978831}
   - component: {fileID: 1011978833}
   - component: {fileID: 1011978832}
+  - component: {fileID: 1011978834}
   m_Layer: 5
   m_Name: BlinkOverlay
   m_TagString: Untagged
@@ -5008,6 +5009,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011978830}
   m_CullTransparentMesh: 1
+--- !u!95 &1011978834
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011978830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1017044455
 GameObject:
   m_ObjectHideFlags: 0
@@ -8099,6 +8122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799967568}
   - component: {fileID: 1799967569}
+  - component: {fileID: 1799967570}
   m_Layer: 0
   m_Name: IntroWakeUpMission
   m_TagString: Untagged
@@ -8140,6 +8164,27 @@ MonoBehaviour:
   _wakeUpClip: {fileID: 7400000, guid: f8e27e39c2aa00c4286de2b483c0dde4, type: 2}
   _dialogues: {fileID: 11400000, guid: ae89942a9466cf34683d113e7cd126eb, type: 2}
   _bathtub: {fileID: 605121117}
+--- !u!320 &1799967570
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799967567}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 305f688472ed0d84a9dd6d2b2e20ab42, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4906914197652935481, guid: 305f688472ed0d84a9dd6d2b2e20ab42, type: 2}
+    value: {fileID: 1017044457}
+  m_ExposedReferences:
+    m_References:
+    - bbbd20ebad5b4b8448835a9faca5536b: {fileID: 1017044455}
+    - 9b93b00bb23e2664db6cb538017a7ed8: {fileID: 1017044455}
 --- !u!1001 &1823135741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10561,8 +10606,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 2110413281}
   - {fileID: 1892384232}
+  - {fileID: 376946825}
   - {fileID: 923277040}
   - {fileID: 878529378}
-  - {fileID: 376946825}
   - {fileID: 1090392626}
   - {fileID: 2032282771}
