@@ -15,7 +15,6 @@ public class DebugManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         IsDebugMode = _isDebugMode;
     }

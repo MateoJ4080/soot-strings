@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class IntroWakeUpMission : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class IntroWakeUpMission : MonoBehaviour
     [SerializeField] private CameraController _camController;
     [SerializeField] private Transform _head;
 
-    [SerializeField] private Animator _introAnimator;
+    [SerializeField] private PlayableDirector _playableDirector;
     [SerializeField] private AnimationClip _wakeUpClip;
     [SerializeField] private DialogueSequence _dialogues;
     [SerializeField] private InteractableBathtub _bathtub;
@@ -19,8 +20,14 @@ public class IntroWakeUpMission : MonoBehaviour
         DayManager.Instance.SetPlayerActive(false);
         _camController.enabled = false;
 
-        _introAnimator.Play("WakeUp");
-        yield return new WaitForSeconds(_wakeUpClip.length * 0.5f); // ----- '0.5' FOR DEBUG ONLY -----
+        if (DebugManager.IsDebugMode)
+        {
+            _playableDirector.time = 43f;
+            _playableDirector.Evaluate();
+        }
+
+        _playableDirector.Play();
+        yield return new WaitUntil(() => _playableDirector.state != PlayState.Playing);
 
         StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
 
