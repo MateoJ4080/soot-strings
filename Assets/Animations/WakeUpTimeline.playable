@@ -650,7 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
   m_Clip: {fileID: 7400000, guid: f8e27e39c2aa00c4286de2b483c0dde4, type: 2}
   m_Position: {x: 0.539, y: -0.417, z: 0.539}
-  m_EulerAngles: {x: 18.473, y: 224.97, z: -89.977}
+  m_EulerAngles: {x: 18.345, y: 227.21, z: -93.14}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 1
