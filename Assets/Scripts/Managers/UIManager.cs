@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -55,6 +56,10 @@ public class UIManager : MonoBehaviour
             Destroy(instance);
             yield break;
         }
+
+        Vector2 size = tmp.GetPreferredValues(dialogue.Text);
+        LayoutElement layout = instance.GetComponent<LayoutElement>();
+        layout.preferredHeight = size.y + instance.GetComponentInParent<VerticalLayoutGroup>().padding.top * 2;
 
         yield return StartCoroutine(Fade(canvasGroup, 0f, 1f, _fadeDuration));
         yield return StartCoroutine(WriteTextUI(dialogue.Text, tmp, _letterSound));
