@@ -20,7 +20,7 @@ public class IntroWakeUpMission : MonoBehaviour
         DayManager.Instance.SetPlayerActive(false);
         _camController.enabled = false;
 
-        if (DebugManager.IsDebugMode)
+        if (DebugManager.SkipAnimations)
         {
             _playableDirector.time = 43f;
             _playableDirector.Evaluate();
