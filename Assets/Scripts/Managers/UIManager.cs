@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator ShowDialogue(DialogueLine dialogue)
     {
-        if (DebugManager.IsDebugMode) yield break;
+        if (DebugManager.SkipDialogues) yield break;
 
         if (_dialoguePrefab == null)
         {

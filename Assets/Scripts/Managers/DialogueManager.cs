@@ -15,8 +15,6 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator PlaySequence(DialogueSequence dialogue)
     {
-        if (DebugManager.SkipDialogues) yield break;
-
         _playerController.enabled = false;
         foreach (var line in dialogue.Lines)
         {

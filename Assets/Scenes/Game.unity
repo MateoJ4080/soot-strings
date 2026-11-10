@@ -3245,6 +3245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DebugManager
   _isDebugMode: 1
+  _skipDialogues: 0
+  _skipAnimations: 1
 --- !u!1 &716580185
 GameObject:
   m_ObjectHideFlags: 0

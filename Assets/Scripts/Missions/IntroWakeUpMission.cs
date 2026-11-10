@@ -22,17 +22,17 @@ public class IntroWakeUpMission : MonoBehaviour
 
         if (DebugManager.SkipAnimations)
         {
-            _playableDirector.time = 43f;
+            _playableDirector.time = _playableDirector.duration - 2;
             _playableDirector.Evaluate();
         }
 
         _playableDirector.Play();
         yield return new WaitUntil(() => _playableDirector.state != PlayState.Playing);
 
-        StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
-
         _camController.enabled = true;
         DayManager.Instance.SetPlayerActive(true);
+
+        StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
 
         yield return _waitForSeconds2;
         _bathtub.Activate();
