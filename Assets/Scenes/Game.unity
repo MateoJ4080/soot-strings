@@ -8747,7 +8747,7 @@ MonoBehaviour:
   audioSource: {fileID: 1892384235}
   stepClips:
   - {fileID: 8300000, guid: 663125a4085d75649971c8e187f5b1d8, type: 3}
-  distanceToStep: 25
+  distanceToStep: 28
 --- !u!114 &1892384227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9013,9 +9013,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38ee88c3cd667043a7218898cee0434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCam: {fileID: 330585545}
-  mouseSensitivity: 10.2
-  xRotation: 0
+  _player: {fileID: 1892384225}
+  _cam: {fileID: 330585545}
+  _camPivot: {fileID: 1017044456}
+  _mouseSensitivity: 5
+  _bobReturnSpeed: {x: 1.49, y: 0.5}
+  _bobAmplitude: {x: 3, y: 3}
+  _bobFrequency: {x: 0.5, y: 1}
 --- !u!114 &1892384234
 MonoBehaviour:
   m_ObjectHideFlags: 0

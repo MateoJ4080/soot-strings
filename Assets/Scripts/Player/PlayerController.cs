@@ -103,7 +103,12 @@ public class PlayerController : MonoBehaviour
 
     private void PlayFootstepSound()
     {
-        if (stepClips.Length == 0) return;
+        if (stepClips.Length == 0)
+        {
+            Debug.LogWarning("Footstep SFX not found");
+            return;
+        }
+
         AudioClip clip = stepClips[Random.Range(0, stepClips.Length)];
         audioSource.PlayOneShot(clip);
     }
