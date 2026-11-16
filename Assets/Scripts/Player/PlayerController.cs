@@ -97,11 +97,10 @@ public class PlayerController : MonoBehaviour
         {
             distanceMoved = 0f;
             lastPos = transform.position;
-            PlayFootstepSound();
         }
     }
 
-    private void PlayFootstepSound()
+    public void PlayFootstepSound()
     {
         if (stepClips.Length == 0)
         {

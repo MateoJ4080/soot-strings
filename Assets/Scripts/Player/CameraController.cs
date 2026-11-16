@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
 
     [Header("Head Bobbing")]
     private float _bobTimer;
+    private float _previousPhase;
     private Vector2 _bobWeight;
     private Vector3 _initialPosition;
     [SerializeField] private float _bobReturnSpeed;
@@ -66,5 +67,13 @@ public class CameraController : MonoBehaviour
         var bobY = Mathf.Sin(_bobTimer * _bobFrequency.y * Mathf.PI * 2f) * _bobAmplitude.y * 0.01f;
 
         _camPivot.localPosition = _initialPosition + new Vector3(bobX * _bobWeight.x, bobY * _bobWeight.x, 0f);
+
+        // Normalize a full sine cycle to a [0-1] value.
+        float phase = _bobTimer * _bobFrequency.y % 1f;
+
+        // 0.75 because, after normalized, it represents sine -1 (3π/2).
+        if (isMoving && _previousPhase < 0.75f && phase >= 0.75f) _player.GetComponent<PlayerController>().PlayFootstepSound();
+
+        _previousPhase = phase;
     }
 }
