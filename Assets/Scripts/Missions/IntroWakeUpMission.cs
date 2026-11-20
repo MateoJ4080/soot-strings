@@ -6,7 +6,6 @@ public class IntroWakeUpMission : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private CameraController _camController;
-    [SerializeField] private Transform _head;
 
     [SerializeField] private PlayableDirector _playableDirector;
     [SerializeField] private AnimationClip _wakeUpClip;

@@ -2955,7 +2955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &512161819
 Transform:
   m_ObjectHideFlags: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DebugManager
   _isDebugMode: 1
   _skipDialogues: 1
-  _skipAnimations: 1
+  _skipAnimations: 0
 --- !u!1 &716580185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10052,14 +10052,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017044455}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalRotation: {x: -0, y: -0.362751, z: -0, w: 0.93188614}
+  m_LocalPosition: {x: 0.78, y: 0.68, z: 0.7799999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   m_Father: {fileID: 1892384232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -42.539, z: 0}
 --- !u!95 &1017044457
 Animator:
   serializedVersion: 7
@@ -11024,7 +11024,7 @@ Transform:
   m_GameObject: {fileID: 1263927567}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020862658, y: 0.70710784, z: 0.70710576, w: 0.000002086272}
-  m_LocalPosition: {x: 0.20666003, y: 0.34700006, z: -6.304}
+  m_LocalPosition: {x: 0.20666003, y: 0.34700006, z: -5.876}
   m_LocalScale: {x: 0.69206315, y: 6.5213223, z: 0.5268447}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32538,7 +32538,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IntroWakeUpMission
   _player: {fileID: 1892384225}
   _camController: {fileID: 1892384233}
-  _head: {fileID: 330585546}
   _playableDirector: {fileID: 1799967570}
   _wakeUpClip: {fileID: 7400000, guid: f8e27e39c2aa00c4286de2b483c0dde4, type: 2}
   _dialogues: {fileID: 11400000, guid: ae89942a9466cf34683d113e7cd126eb, type: 2}
@@ -32553,7 +32552,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 305f688472ed0d84a9dd6d2b2e20ab42, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
