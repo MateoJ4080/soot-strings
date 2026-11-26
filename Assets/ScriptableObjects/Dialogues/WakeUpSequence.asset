@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: WakeUpSequence
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   lines:
-  - Text: "Ughhh\u2026 my head is killing me."
+  - Text: "Ughhh\u2026 my head is killing me..."
     Speaker: 0
   - Text: What the hell did I do last night?
     Speaker: 0
-  duration: 1

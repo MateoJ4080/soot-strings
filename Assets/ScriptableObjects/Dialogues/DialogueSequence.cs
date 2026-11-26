@@ -4,8 +4,5 @@ using UnityEngine;
 public class DialogueSequence : ScriptableObject
 {
     [SerializeField] private DialogueLine[] lines;
-    [SerializeField] private float duration;
-
     public DialogueLine[] Lines => lines;
-    public float Duration => duration;
 }

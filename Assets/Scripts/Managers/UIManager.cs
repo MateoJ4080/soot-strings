@@ -58,6 +58,7 @@ public class UIManager : MonoBehaviour
             yield break;
         }
 
+        // Resize so it doesn't start as a thin container
         Vector2 size = tmp.GetPreferredValues(dialogue.Text);
         LayoutElement layout = instance.GetComponent<LayoutElement>();
         layout.preferredHeight = size.y + instance.GetComponentInParent<VerticalLayoutGroup>().padding.top * 2;
