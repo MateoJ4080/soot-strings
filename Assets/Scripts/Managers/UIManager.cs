@@ -14,10 +14,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioClip _popupSound;
     [SerializeField] private AudioClip _letterSound;
 
-    [Header("Popups")]
-    [SerializeField] private GameObject _popupPrefab;
-    [SerializeField] private float _popupDuration = 1.5f;
-
     [Header("Dialogues")]
     [SerializeField] private GameObject _dialoguePrefab;
     [SerializeField] private float _dialogueDuration = 1f; // Dialogue should be skippable instead of having a fixed duration. Change this later.
