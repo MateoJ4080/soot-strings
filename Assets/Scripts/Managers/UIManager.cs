@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     // [SerializeField] private float dialogueDuration = 1.5f; // Dialogue should be skippable instead of having a fixed duration. Change this later.
 
     [Header("Objectives")]
+    [SerializeField] private GameObject _objectivePanel;
     [SerializeField] private TMP_Text _objectiveText;
 
     private void Awake()
@@ -80,10 +81,10 @@ public class UIManager : MonoBehaviour
             _interactText.gameObject.SetActive(false);
     }
 
-    public void ShowObjectiveText(string text)
+    public void ShowObjective(string text)
     {
         _objectiveText.text = text;
-        _objectiveText.gameObject.SetActive(true);
+        _objectivePanel.gameObject.SetActive(true);
     }
 
     public void HideObjectiveText()

@@ -31,7 +31,9 @@ public class IntroWakeUpMission : MonoBehaviour
         _camController.enabled = true;
         DayManager.Instance.SetPlayerActive(true);
 
-        StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
+        yield return StartCoroutine(DialogueManager.Instance.PlaySequence(_dialogues));
+
+        UIManager.Instance.ShowObjective("- Find something to drink");
 
         yield return _waitForSeconds2;
         _bathtub.Activate();
