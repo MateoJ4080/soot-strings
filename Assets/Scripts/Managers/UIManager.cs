@@ -7,11 +7,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    [Header("General")]
-    [SerializeField] private float _letterInterval = 0.1f;
-    [SerializeField] private float _wordInterval = 0.1f;
-    [SerializeField] private float _fadeDuration = 0.5f;
-
     [Header("Interactable")]
     [SerializeField] private TMP_Text _interactText;
 
@@ -25,7 +20,10 @@ public class UIManager : MonoBehaviour
 
     [Header("Dialogues")]
     [SerializeField] private GameObject _dialoguePrefab;
-    // [SerializeField] private float dialogueDuration = 1.5f; // Dialogue should be skippable instead of having a fixed duration. Change this later.
+    [SerializeField] private float _dialogueDuration = 1f; // Dialogue should be skippable instead of having a fixed duration. Change this later.
+    [SerializeField] private float _letterInterval = 0.07f;
+    [SerializeField] private float _wordInterval = 0.07f;
+    [SerializeField] private float _fadeDuration = 0.5f;
 
     [Header("Objectives")]
     [SerializeField] private GameObject _objectivePanel;
@@ -65,7 +63,7 @@ public class UIManager : MonoBehaviour
 
         yield return StartCoroutine(Fade(canvasGroup, 0f, 1f, _fadeDuration));
         yield return StartCoroutine(WriteTextUI(dialogue.Text, tmp, _letterSound));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_dialogueDuration);
         yield return StartCoroutine(Fade(canvasGroup, 1f, 0f, _fadeDuration));
         Destroy(instance);
     }
