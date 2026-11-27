@@ -82,9 +82,9 @@ public class UIManager : MonoBehaviour
         _objectivePanel.gameObject.SetActive(true);
     }
 
-    public void HideObjectiveText()
+    public void HideObjective()
     {
-        _objectiveText.gameObject.SetActive(false);
+        _objectivePanel.gameObject.SetActive(false);
     }
 
     private IEnumerator WriteTextUI(string text, TMP_Text label, AudioClip sound)
